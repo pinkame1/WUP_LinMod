@@ -35,8 +35,22 @@ data <- read.csv(file="https://onlinestatbook.com/case_studies_rvls/physical_str
 
 ### scatterplot
 
+```{r}
+basicNN <- ggplot(data,aes(y=SIMS,x=ARM))
+basicNN +geom_point()+ geom_lm()
+```
+
+
+The scatter plot demonstrates a positive linear relationship because the fit line is going to the right and increasing.
+
 ### Numerical results
 
+
+```{r}
+cor(SIMS ~ARM, data=data)
+```
+
+the correlation is SIMS is positive (0.686) which tells use that we have positive number therefore it has to be positive.
 
 ### Inferential  (Build model.1)
 

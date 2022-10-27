@@ -36,7 +36,7 @@ data <- read.csv(file="https://onlinestatbook.com/case_studies_rvls/physical_str
 ### scatterplot
 
 ```{r}
-basicNN <- ggplot(data,aes(y=SIMS,x=ARM))
+basicNN <- ggplot(data,aes(x=SIMS,y=ARM))
 basicNN +geom_point()+ geom_lm()
 ```
 
@@ -77,11 +77,15 @@ predict(model.1, mydat, interval ="prediction")
 
 ```
 
-The target prediction is .70 , the lower interval is -1.70 , and lastly the upper predicition is 3.13
+The target prediction is .70 , the lower interval is -1.70 , and lastly the upper prediction is 3.13
 
 
 #### scatterplot with model fit
-  
+
+```{r}
+basicNN <- ggplot(data,aes(x=SIMS,y=ARM))
+basicNN +geom_point()+ geom_lm()
+```
 
 ## Model 2 SIM~GRIP
 

@@ -116,9 +116,17 @@ The scatter plot shows us a positive linear fit for GRIP and SIMS.
 
 ### Numerical results (cor)
 
-`
+```{r}
+cor(SIMS ~GRIP, data=data)
+```
+This number is our linear correlation which is 0.63which means we still have a positive linear correlation. 
+  
   
 ### Inferential  (Build 2-dimentional model.3)
+
+
+
+
 
 #### predict model.3 at target point
   

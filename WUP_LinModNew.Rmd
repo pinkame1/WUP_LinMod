@@ -91,6 +91,14 @@ basicNN +geom_point()+ geom_lm()
 
 ### Now add in scatterplot
 
+```{r}
+basicNN <- ggplot(data,aes(x=SIMS,y=GRIP))
+basicNN +geom_point()+ geom_lm()
+```
+
+
+The scatter plot shows us a positive linear fit for GRIP and SIMS. 
+
 
 ### Numerical results 
 

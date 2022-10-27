@@ -54,7 +54,30 @@ the correlation is SIMS is positive (0.686) which tells use that we have positiv
 
 ### Inferential  (Build model.1)
 
+
+```{r}
+model.1 <- lm(SIMS~ARM, data=data)
+summary.lm(model.1)
+```
+
 #### Predict at target point
+```{r}
+mydat <- data.frame(GRIP = 94, ARM = 88)
+
+```
+
+
+
+
+
+
+
+```{r}
+predict(model.1, mydat, interval ="prediction")
+
+```
+
+The target prediction is .70 , the lower interval is -1.70 , and lastly the upper predicition is 3.13
 
 
 #### scatterplot with model fit

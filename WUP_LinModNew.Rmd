@@ -125,11 +125,24 @@ This number is our linear correlation which is 0.63which means we still have a p
 ### Inferential  (Build 2-dimentional model.3)
 
 
+```{r}
+model.2<- lm(SIMS~GRIP, data=data)
+summary.lm(model.2)
+```
+
+
 
 
 
 #### predict model.3 at target point
   
+
+```{r}
+predict(model.1, mydat, interval ="prediction")
+
+```
+
+The prediction of fit is -0.536 and we got lower as -3.107 and the upper is 2.035. 
 
 ## Comparing nested models ANOVA Test
 

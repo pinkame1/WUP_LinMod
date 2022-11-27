@@ -113,8 +113,9 @@ summary.lm(model.2)
 ```
 
 #### predict model.2 at target point
-
-
+```{r}
+mydat<- data.frame(GRIP = 94, ARM = 88)
+```
 ```{r}
 predict(model.2, mydat, interval ="prediction")
 
@@ -124,20 +125,31 @@ The prediction of fit is -0.536 and we got lower as -3.107 and the upper is 2.03
 
 
 #### now add the model fit to our plot for model.2
+```{r}
+basicNG <- ggplot (data, aes(y=GRIP, x= SIMS))
+basicNG + geom_point()+ geom_lm()
+```
   
 
 
 ## Model 3 SIM~ARM+GRIP
 
+
+
 ### Numerical results (cor)
 
-
+```{r}
+cor(SIMS~ARM+GRIP, data=data)
+```
+The correlation is 0.732 which is a positive number meaning we have a positive linear correlation. 
 
   
 ### Inferential  (Build 2-dimentional model.3)
 
-
-
+```{r}
+model.3 <- lm(SIMS~ARM+GRIP, data=data)
+summary.lm(model.3)
+```
 
 
 
@@ -145,12 +157,34 @@ The prediction of fit is -0.536 and we got lower as -3.107 and the upper is 2.03
 #### predict model.3 at target point
   
 
-
+```{r}
+predict(model.3,mydat,interval = "prediction")
+```
+The linear fir is 0.149, lower is -2.132, and the upper is 2.431.
 
 ## Comparing nested models ANOVA Test
 
 ### Model.1 vs Model.3
+
+```{r}
+anova (model.1, model.3)
+```
+
+The anova test shows that model 3 is a better fit than model 1.
+
 ### Model.2 vs Model.3
 
+```{r}
+anova(model.2, model.3)
+```
+
+The anova test sgows that model 3 is a better fit than model 2.
+
 ## Informally compare Model.1 with model.2
+```{r}
+anova(model.1, model.2)
+```
+
+Model 1 is a better fit than model 2 because of its adjusted r square was lower but neither model shows a p value because they never nested data. The overall best fit model was model 3 because has the highest adjusted r square and the lowest residual error number. We only got one p value form model 3 but its because it had nested data form models 1 and 2. 
+
 
